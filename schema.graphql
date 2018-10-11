@@ -1,0 +1,23 @@
+type Post {
+  title: String
+  description: String
+}
+
+type User {
+  name: String!
+  email: String!
+  posts: [Post]
+}
+
+type Query {
+  """
+  the list of Posts by this author
+  """
+  users: [User]
+
+  userById(id: String!): User
+}
+
+type Mutation {
+  setUserName(name: String!): String
+}
